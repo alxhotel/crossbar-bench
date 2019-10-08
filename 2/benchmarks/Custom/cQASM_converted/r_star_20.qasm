@@ -1,0 +1,22 @@
+version 1.0
+qubits 20
+
+sqswap q[18],q[7]
+sqswap q[18],q[15]
+sqswap q[18],q[9]
+sqswap q[18],q[16]
+sqswap q[18],q[13]
+sqswap q[18],q[4]
+sqswap q[18],q[11]
+sqswap q[18],q[10]
+sqswap q[18],q[5]
+sqswap q[18],q[8]
+sqswap q[18],q[19]
+sqswap q[18],q[17]
+sqswap q[18],q[1]
+sqswap q[18],q[6]
+sqswap q[18],q[3]
+sqswap q[18],q[2]
+sqswap q[18],q[12]
+sqswap q[18],q[0]
+sqswap q[18],q[14]
