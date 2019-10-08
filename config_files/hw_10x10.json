@@ -1,0 +1,1951 @@
+{
+    "eqasm_compiler_name": "crossbar_compiler",
+    "gate_decomposition": {
+        "cnot %0, %1": [
+            "y90 %1",
+            "sqswap %0, %1",
+            "z %0",
+            "sqswap %0, %1",
+            "sdag %0",
+            "sdag %1",
+            "my90 %1"
+        ],
+        "toffoli %0 %1 %2": [
+            "y90 %0",
+            "rx %0, -0.785",
+            "y %0",
+            "y90 %1",
+            "rx %1, -0.785",
+            "my90 %1",
+            "x %2",
+            "my90 %2",
+            "cz %2 %0",
+            "y %0",
+            "rx %0, 0.785",
+            "y %0",
+            "my90 %2",
+            "cz %1 %2",
+            "y %2",
+            "cz %1 %0",
+            "y %0",
+            "rx %2, 0.785",
+            "y %2",
+            "rx %0, -0.785",
+            "y %0",
+            "cz %1 %2",
+            "y90 %2",
+            "cz %2 %0",
+            "y %0",
+            "rx %0, 0.785",
+            "y %0",
+            "y90 %2",
+            "rx %2, -0.785",
+            "my90 %2",
+            "cz %1 %0",
+            "y90 %0",
+            "x %2",
+            "my90 %2"
+        ]
+    },
+    "hardware_settings": {
+        "cycle_time": 10,
+        "qubit_number": 50
+    },
+    "instructions": {
+        "cz": {
+            "cc_light_instr": "cphase",
+            "cc_light_instr_type": "two_qubit_gate",
+            "duration": 80,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "h": {
+            "cc_light_instr": "h",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "i": {
+            "cc_light_instr": "i",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    1.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "measure_left_down": {
+            "cc_light_instr": "measure_left_down",
+            "cc_light_instr_type": "measurement_gate",
+            "duration": 80,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "measure_left_up": {
+            "cc_light_instr": "measure_left_up",
+            "cc_light_instr_type": "measurement_gate",
+            "duration": 80,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "measure_right_down": {
+            "cc_light_instr": "measure_right_down",
+            "cc_light_instr_type": "measurement_gate",
+            "duration": 80,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "measure_right_up": {
+            "cc_light_instr": "measure_right_up",
+            "cc_light_instr_type": "measurement_gate",
+            "duration": 80,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "move": {
+            "cc_light_instr": "move",
+            "cc_light_instr_type": "move",
+            "duration": 20,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "mx90": {
+            "cc_light_instr": "mx90",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "my90": {
+            "cc_light_instr": "my90",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.7071068,
+                    0.0
+                ],
+                [
+                    -0.7071068,
+                    0.0
+                ],
+                [
+                    0.7071068,
+                    0.0
+                ],
+                [
+                    0.7071068,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "prep_x": {
+            "cc_light_instr": "prep_x",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "prep_y": {
+            "cc_light_instr": "prep_y",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "prep_z": {
+            "cc_light_instr": "prep_z",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "rx": {
+            "cc_light_instr": "rx",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "rx45": {
+            "cc_light_instr": "rx90",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "ry": {
+            "cc_light_instr": "ry",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "ry45": {
+            "cc_light_instr": "rx90",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "rz": {
+            "cc_light_instr": "rz",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "s": {
+            "cc_light_instr": "s",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "s_shuttle_left": {
+            "cc_light_instr": "s_shuttle_left",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "s_shuttle_right": {
+            "cc_light_instr": "s_shuttle_right",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "sdag": {
+            "cc_light_instr": "sdag",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "sdag_shuttle_left": {
+            "cc_light_instr": "sdag_shuttle_left",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "sdag_shuttle_right": {
+            "cc_light_instr": "sdag_shuttle_right",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "shuttle_down": {
+            "cc_light_instr": "shuttle_down",
+            "cc_light_instr_type": "shuttle",
+            "duration": 20,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "shuttle_left": {
+            "cc_light_instr": "shuttle_left",
+            "cc_light_instr_type": "shuttle",
+            "duration": 20,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "shuttle_right": {
+            "cc_light_instr": "shuttle_right",
+            "cc_light_instr_type": "shuttle",
+            "duration": 20,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "shuttle_up": {
+            "cc_light_instr": "shuttle_up",
+            "cc_light_instr_type": "shuttle",
+            "duration": 20,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "sqswap": {
+            "cc_light_instr": "sqswap",
+            "cc_light_instr_type": "two_qubit_gate",
+            "duration": 80,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "swap": {
+            "cc_light_instr": "swap",
+            "cc_light_instr_type": "swap",
+            "duration": 20,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "t": {
+            "cc_light_instr": "t",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "t_shuttle_left": {
+            "cc_light_instr": "t_shuttle_left",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "t_shuttle_right": {
+            "cc_light_instr": "t_shuttle_right",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "tdag": {
+            "cc_light_instr": "tdag",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "tdag_shuttle_left": {
+            "cc_light_instr": "tdag_shuttle_left",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "tdag_shuttle_right": {
+            "cc_light_instr": "tdag_shuttle_right",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "x": {
+            "cc_light_instr": "x",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "x180": {
+            "cc_light_instr": "x180",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "x90": {
+            "cc_light_instr": "x90",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "y": {
+            "cc_light_instr": "y",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "y180": {
+            "cc_light_instr": "y180",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "y90": {
+            "cc_light_instr": "y90",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.7071068,
+                    0.0
+                ],
+                [
+                    -0.7071068,
+                    0.0
+                ],
+                [
+                    0.7071068,
+                    0.0
+                ],
+                [
+                    0.7071068,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "z": {
+            "cc_light_instr": "z",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "z_shuttle_left": {
+            "cc_light_instr": "z_shuttle_left",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        },
+        "z_shuttle_right": {
+            "cc_light_instr": "z_shuttle_right",
+            "cc_light_instr_type": "single_qubit_gate",
+            "duration": 40,
+            "latency": 0,
+            "matrix": [
+                [
+                    0.0,
+                    1.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    1.0,
+                    0.0
+                ],
+                [
+                    0.0,
+                    0.0
+                ]
+            ],
+            "type": "cc_light_type"
+        }
+    },
+    "resources": {
+        "barriers": {},
+        "qubit_lines": {},
+        "sites": {},
+        "wave": {
+            "wave_duration": 40
+        }
+    },
+    "topology": {
+        "edges": [
+            {
+                "dst": 5,
+                "id": 1,
+                "src": 0
+            },
+            {
+                "dst": 8,
+                "id": 2,
+                "src": 4
+            },
+            {
+                "dst": 9,
+                "id": 3,
+                "src": 4
+            },
+            {
+                "dst": 5,
+                "id": 4,
+                "src": 1
+            },
+            {
+                "dst": 6,
+                "id": 5,
+                "src": 1
+            },
+            {
+                "dst": 6,
+                "id": 6,
+                "src": 2
+            },
+            {
+                "dst": 7,
+                "id": 7,
+                "src": 2
+            },
+            {
+                "dst": 7,
+                "id": 8,
+                "src": 3
+            },
+            {
+                "dst": 8,
+                "id": 9,
+                "src": 3
+            },
+            {
+                "dst": 10,
+                "id": 10,
+                "src": 5
+            },
+            {
+                "dst": 11,
+                "id": 11,
+                "src": 5
+            },
+            {
+                "dst": 11,
+                "id": 12,
+                "src": 6
+            },
+            {
+                "dst": 12,
+                "id": 13,
+                "src": 6
+            },
+            {
+                "dst": 14,
+                "id": 14,
+                "src": 9
+            },
+            {
+                "dst": 12,
+                "id": 15,
+                "src": 7
+            },
+            {
+                "dst": 13,
+                "id": 16,
+                "src": 7
+            },
+            {
+                "dst": 13,
+                "id": 17,
+                "src": 8
+            },
+            {
+                "dst": 14,
+                "id": 18,
+                "src": 8
+            },
+            {
+                "dst": 15,
+                "id": 19,
+                "src": 10
+            },
+            {
+                "dst": 18,
+                "id": 20,
+                "src": 14
+            },
+            {
+                "dst": 19,
+                "id": 21,
+                "src": 14
+            },
+            {
+                "dst": 15,
+                "id": 22,
+                "src": 11
+            },
+            {
+                "dst": 16,
+                "id": 23,
+                "src": 11
+            },
+            {
+                "dst": 16,
+                "id": 24,
+                "src": 12
+            },
+            {
+                "dst": 17,
+                "id": 25,
+                "src": 12
+            },
+            {
+                "dst": 17,
+                "id": 26,
+                "src": 13
+            },
+            {
+                "dst": 18,
+                "id": 27,
+                "src": 13
+            },
+            {
+                "dst": 20,
+                "id": 28,
+                "src": 15
+            },
+            {
+                "dst": 21,
+                "id": 29,
+                "src": 15
+            },
+            {
+                "dst": 21,
+                "id": 30,
+                "src": 16
+            },
+            {
+                "dst": 22,
+                "id": 31,
+                "src": 16
+            },
+            {
+                "dst": 24,
+                "id": 32,
+                "src": 19
+            },
+            {
+                "dst": 22,
+                "id": 33,
+                "src": 17
+            },
+            {
+                "dst": 23,
+                "id": 34,
+                "src": 17
+            },
+            {
+                "dst": 23,
+                "id": 35,
+                "src": 18
+            },
+            {
+                "dst": 24,
+                "id": 36,
+                "src": 18
+            },
+            {
+                "dst": 25,
+                "id": 37,
+                "src": 20
+            },
+            {
+                "dst": 28,
+                "id": 38,
+                "src": 24
+            },
+            {
+                "dst": 29,
+                "id": 39,
+                "src": 24
+            },
+            {
+                "dst": 25,
+                "id": 40,
+                "src": 21
+            },
+            {
+                "dst": 26,
+                "id": 41,
+                "src": 21
+            },
+            {
+                "dst": 26,
+                "id": 42,
+                "src": 22
+            },
+            {
+                "dst": 27,
+                "id": 43,
+                "src": 22
+            },
+            {
+                "dst": 27,
+                "id": 44,
+                "src": 23
+            },
+            {
+                "dst": 28,
+                "id": 45,
+                "src": 23
+            },
+            {
+                "dst": 30,
+                "id": 46,
+                "src": 25
+            },
+            {
+                "dst": 31,
+                "id": 47,
+                "src": 25
+            },
+            {
+                "dst": 31,
+                "id": 48,
+                "src": 26
+            },
+            {
+                "dst": 32,
+                "id": 49,
+                "src": 26
+            },
+            {
+                "dst": 34,
+                "id": 50,
+                "src": 29
+            },
+            {
+                "dst": 32,
+                "id": 51,
+                "src": 27
+            },
+            {
+                "dst": 33,
+                "id": 52,
+                "src": 27
+            },
+            {
+                "dst": 33,
+                "id": 53,
+                "src": 28
+            },
+            {
+                "dst": 34,
+                "id": 54,
+                "src": 28
+            },
+            {
+                "dst": 35,
+                "id": 55,
+                "src": 30
+            },
+            {
+                "dst": 38,
+                "id": 56,
+                "src": 34
+            },
+            {
+                "dst": 39,
+                "id": 57,
+                "src": 34
+            },
+            {
+                "dst": 35,
+                "id": 58,
+                "src": 31
+            },
+            {
+                "dst": 36,
+                "id": 59,
+                "src": 31
+            },
+            {
+                "dst": 36,
+                "id": 60,
+                "src": 32
+            },
+            {
+                "dst": 37,
+                "id": 61,
+                "src": 32
+            },
+            {
+                "dst": 37,
+                "id": 62,
+                "src": 33
+            },
+            {
+                "dst": 38,
+                "id": 63,
+                "src": 33
+            },
+            {
+                "dst": 40,
+                "id": 64,
+                "src": 35
+            },
+            {
+                "dst": 41,
+                "id": 65,
+                "src": 35
+            },
+            {
+                "dst": 41,
+                "id": 66,
+                "src": 36
+            },
+            {
+                "dst": 42,
+                "id": 67,
+                "src": 36
+            },
+            {
+                "dst": 44,
+                "id": 68,
+                "src": 39
+            },
+            {
+                "dst": 42,
+                "id": 69,
+                "src": 37
+            },
+            {
+                "dst": 43,
+                "id": 70,
+                "src": 37
+            },
+            {
+                "dst": 43,
+                "id": 71,
+                "src": 38
+            },
+            {
+                "dst": 44,
+                "id": 72,
+                "src": 38
+            },
+            {
+                "dst": 45,
+                "id": 73,
+                "src": 40
+            },
+            {
+                "dst": 48,
+                "id": 74,
+                "src": 44
+            },
+            {
+                "dst": 49,
+                "id": 75,
+                "src": 44
+            },
+            {
+                "dst": 45,
+                "id": 76,
+                "src": 41
+            },
+            {
+                "dst": 46,
+                "id": 77,
+                "src": 41
+            },
+            {
+                "dst": 46,
+                "id": 78,
+                "src": 42
+            },
+            {
+                "dst": 47,
+                "id": 79,
+                "src": 42
+            },
+            {
+                "dst": 47,
+                "id": 80,
+                "src": 43
+            },
+            {
+                "dst": 48,
+                "id": 81,
+                "src": 43
+            }
+        ],
+        "form": "irregular",
+        "init_configuration": {
+            "0": {
+                "position": [
+                    0,
+                    0
+                ],
+                "type": "data"
+            },
+            "1": {
+                "position": [
+                    0,
+                    2
+                ],
+                "type": "data"
+            },
+            "2": {
+                "position": [
+                    0,
+                    4
+                ],
+                "type": "data"
+            },
+            "3": {
+                "position": [
+                    0,
+                    6
+                ],
+                "type": "data"
+            },
+            "4": {
+                "position": [
+                    0,
+                    8
+                ],
+                "type": "data"
+            },
+            "5": {
+                "position": [
+                    1,
+                    1
+                ],
+                "type": "data"
+            },
+            "6": {
+                "position": [
+                    1,
+                    3
+                ],
+                "type": "data"
+            },
+            "7": {
+                "position": [
+                    1,
+                    5
+                ],
+                "type": "data"
+            },
+            "8": {
+                "position": [
+                    1,
+                    7
+                ],
+                "type": "data"
+            },
+            "9": {
+                "position": [
+                    1,
+                    9
+                ],
+                "type": "data"
+            },
+            "10": {
+                "position": [
+                    2,
+                    0
+                ],
+                "type": "data"
+            },
+            "11": {
+                "position": [
+                    2,
+                    2
+                ],
+                "type": "data"
+            },
+            "12": {
+                "position": [
+                    2,
+                    4
+                ],
+                "type": "data"
+            },
+            "13": {
+                "position": [
+                    2,
+                    6
+                ],
+                "type": "data"
+            },
+            "14": {
+                "position": [
+                    2,
+                    8
+                ],
+                "type": "data"
+            },
+            "15": {
+                "position": [
+                    3,
+                    1
+                ],
+                "type": "data"
+            },
+            "16": {
+                "position": [
+                    3,
+                    3
+                ],
+                "type": "data"
+            },
+            "17": {
+                "position": [
+                    3,
+                    5
+                ],
+                "type": "data"
+            },
+            "18": {
+                "position": [
+                    3,
+                    7
+                ],
+                "type": "data"
+            },
+            "19": {
+                "position": [
+                    3,
+                    9
+                ],
+                "type": "data"
+            },
+            "20": {
+                "position": [
+                    4,
+                    0
+                ],
+                "type": "data"
+            },
+            "21": {
+                "position": [
+                    4,
+                    2
+                ],
+                "type": "data"
+            },
+            "22": {
+                "position": [
+                    4,
+                    4
+                ],
+                "type": "data"
+            },
+            "23": {
+                "position": [
+                    4,
+                    6
+                ],
+                "type": "data"
+            },
+            "24": {
+                "position": [
+                    4,
+                    8
+                ],
+                "type": "data"
+            },
+            "25": {
+                "position": [
+                    5,
+                    1
+                ],
+                "type": "data"
+            },
+            "26": {
+                "position": [
+                    5,
+                    3
+                ],
+                "type": "data"
+            },
+            "27": {
+                "position": [
+                    5,
+                    5
+                ],
+                "type": "data"
+            },
+            "28": {
+                "position": [
+                    5,
+                    7
+                ],
+                "type": "data"
+            },
+            "29": {
+                "position": [
+                    5,
+                    9
+                ],
+                "type": "data"
+            },
+            "30": {
+                "position": [
+                    6,
+                    0
+                ],
+                "type": "data"
+            },
+            "31": {
+                "position": [
+                    6,
+                    2
+                ],
+                "type": "data"
+            },
+            "32": {
+                "position": [
+                    6,
+                    4
+                ],
+                "type": "data"
+            },
+            "33": {
+                "position": [
+                    6,
+                    6
+                ],
+                "type": "data"
+            },
+            "34": {
+                "position": [
+                    6,
+                    8
+                ],
+                "type": "data"
+            },
+            "35": {
+                "position": [
+                    7,
+                    1
+                ],
+                "type": "data"
+            },
+            "36": {
+                "position": [
+                    7,
+                    3
+                ],
+                "type": "data"
+            },
+            "37": {
+                "position": [
+                    7,
+                    5
+                ],
+                "type": "data"
+            },
+            "38": {
+                "position": [
+                    7,
+                    7
+                ],
+                "type": "data"
+            },
+            "39": {
+                "position": [
+                    7,
+                    9
+                ],
+                "type": "data"
+            },
+            "40": {
+                "position": [
+                    8,
+                    0
+                ],
+                "type": "data"
+            },
+            "41": {
+                "position": [
+                    8,
+                    2
+                ],
+                "type": "data"
+            },
+            "42": {
+                "position": [
+                    8,
+                    4
+                ],
+                "type": "data"
+            },
+            "43": {
+                "position": [
+                    8,
+                    6
+                ],
+                "type": "data"
+            },
+            "44": {
+                "position": [
+                    8,
+                    8
+                ],
+                "type": "data"
+            },
+            "45": {
+                "position": [
+                    9,
+                    1
+                ],
+                "type": "data"
+            },
+            "46": {
+                "position": [
+                    9,
+                    3
+                ],
+                "type": "data"
+            },
+            "47": {
+                "position": [
+                    9,
+                    5
+                ],
+                "type": "data"
+            },
+            "48": {
+                "position": [
+                    9,
+                    7
+                ],
+                "type": "data"
+            },
+            "49": {
+                "position": [
+                    9,
+                    9
+                ],
+                "type": "data"
+            }
+        },
+        "x_size": 10,
+        "y_size": 10
+    }
+}
