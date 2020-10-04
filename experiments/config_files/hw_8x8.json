@@ -1,4 +1,5 @@
 {
+    "eqasm_compiler": "crossbar_compiler",
     "eqasm_compiler_name": "crossbar_compiler",
     "gate_decomposition": {
         "cnot %0, %1": [

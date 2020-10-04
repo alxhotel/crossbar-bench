@@ -49,7 +49,7 @@ def gen_topology(size):
 	id = 1
 	for i, val in topo.items():
 		for j, qubit in val.items():
-			# Check if there is an top row
+			# Check if there is a top row
 			if (i < size - 1):
 				# Check left
 				if (j > 0):

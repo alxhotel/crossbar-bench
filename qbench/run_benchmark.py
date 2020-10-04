@@ -15,7 +15,7 @@ from libQasm import libQasm
 curdir = os.path.dirname(__file__)
 
 def read_cqasm(name, input_path):
-    print(input_path)
+    print('Reading: ' + input_path)
     # Parse cQASM file
     lq = libQasm()
     lq.parse_file(input_path)

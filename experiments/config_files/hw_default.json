@@ -1,4 +1,5 @@
 {
+	"eqasm_compiler" : "crossbar_compiler",
 	"eqasm_compiler_name" : "crossbar_compiler",
 
 	"hardware_settings": {
